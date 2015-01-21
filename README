@@ -1,0 +1,10 @@
+Just run:
+./build-libpcap.sh
+
+I was test on Xcode6, SDK8.1
+Maybe your should change some in Makefile.ios~
+
+
+Have fun!
+
+- annidy
