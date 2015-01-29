@@ -4,6 +4,7 @@ Just run:
 I was test on Xcode6, SDK8.1
 Maybe your should change some in Makefile.ios~
 
+Exist arch: armv7 i386
 
 Have fun!
 

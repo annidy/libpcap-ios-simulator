@@ -45,14 +45,14 @@ srcdir = .
 #
 #DEVELOPER=`xcode-select -print-path`
 DEVELOPER=/Applications/Xcode.app/Contents/Developer
-PLATFORM=iPhoneOS
-ARCH=armv7
+PLATFORM=iPhoneSimulator
+ARCH=i386
 SDKVERSION=8.1
-DEVROOT=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain
-SDKROOT=${DEVELOPER}/Platforms/iPhoneOS.platform/Developer/SDKs/${PLATFORM}${SDKVERSION}.sdk
+DEVROOT=${DEVELOPER}/Platforms/iPhoneSimulator.platform/Developer
+SDKROOT=${DEVELOPER}/Platforms/iPhoneSimulator.platform/Developer/SDKs/${PLATFORM}${SDKVERSION}.sdk
 
 LD = ${DEVROOT}/usr/bin/ld
-CC = ${DEVROOT}/usr/bin/clang
+CC = ${DEVROOT}/usr/bin/gcc
 AR = ${DEVROOT}/usr/bin/ar
 LIBTOOL = xcrun libtool
 CCOPT = -O -fno-common
@@ -358,7 +358,7 @@ all: libpcap.a shared pcap-config
 
 libpcap.a: $(OBJ)
 	@rm -f $@
-	$(LIBTOOL) $(SLDFAGS) $(OBJ) -o libpcap-ios.a
+	$(LIBTOOL) $(SLDFAGS) $(OBJ) -o libpcap-simulator.a
 
 shared: libpcap.$(DYEXT)
 
