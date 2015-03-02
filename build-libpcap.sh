@@ -21,11 +21,16 @@ cp -f ../Makefile.ios Makefile
 make clean
 make
 
+cp -f ../Makefile64.ios Makefile 
+make clean
+make
+
 cp -f ../Makefile.simulator Makefile 
 make clean
 make
 
 xcrun -sdk iphoneos lipo \
 	  -arch armv7 libpcap-ios.a \
+	  -arch arm64 libpcap64-ios.a \
 	  -arch i386 libpcap-simulator.a \
-	  -create -output libpcap.a
+	  -create -output ../libpcap.a
